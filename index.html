@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+		@font-face {
+			font-family: PixelArtFont;
+			src: url(slkscre.ttf);
+		}
+
+        body {
+			margin: 0%;
+            padding: 0%;
+            height: 100vh;
+            overflow-y: scroll;
+			font-family: PixelArtFont, monospace;
+			background-color: white;
+        }
+		
+		.main-container {
+			margin: 5px;
+            padding: 0%;
+			background-color: white;
+		}
+
+		
+		.profile-container {
+			display: flex;
+			flex-wrap:wrap;
+			margin: 2px;
+            padding: 95px;
+			margin-bottom: 5px;
+			box-shadow: -1px 0 0 0 #ccc, 1px 0 0 0 #ccc, 0 -1px 0 0 #ccc, 0 1px 0 0 #ccc;
+			justify-content: left;
+        }
+        .avatar {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+			border: 4px solid #99ccff;
+
+			background-image: url('toma2.jpg'); 
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: top center;
+			image-rendering: pixelated;
+        }
+        .profile-info {
+			width: auto;
+			margin: 10px;
+			margin-left: 50px;
+			flex-grow: 1;
+			color: #6495ED;
+        }
+        .profile-info h1, .profile-info h2 {
+            margin: 0%;
+        }
+		.profile-info p {
+            margin: 0%;
+			color: #888888;
+        }
+		.social-links {
+            margin-top: 25px;
+            padding: 0;
+			width: 250px;
+			display: flex;
+			flex-direction: row;
+        }
+		.social-links i {
+			padding-right: 5vh;
+			display: inline-block;
+			text-decoration: none;
+			font-size:22px;
+			color: #9999ff;
+		}
+		
+		.social-links i:hover {
+			transform: scale(1.1);
+		}
+		
+		.image-container {
+			margin: 2px;
+            padding: 5px;
+            display: flex;
+            flex-wrap: wrap;
+			box-shadow: -1px 0 0 0 #ccc, 1px 0 0 0 #ccc, 0 -1px 0 0 white, 0 1px 0 0 #ccc;
+        } 
+        .image-container img {
+			margin: 0%;
+            padding: 0%;
+            height: 45vh;
+            width: auto;
+            object-fit: cover;
+			box-sizing: border-box;
+			image-rendering: pixelated;
+        }
+		.image-container img:hover {
+            border: none;
+			transform: scale(1.01);
+        }
+		.image-container img:active {
+			transform: scale(2);
+			border: none;
+		}
+
+		
+    </style>
+	<script>
+	function copyMailToClipboard() {
+		navigator.clipboard.writeText('tama.voron@ya.ru');
+	}
+    </script>
+</head>
+<body>
+	<div class="main-container">
+		<div class="profile-container">
+			<div class="avatar"></div>
+			<div class="profile-info">
+				<h1>TAMARA VORONINA</h1>
+				<h2>UX/UI DESIGNER, ILLUSTRATION, PIXEL-ART</h2>
+				<p>Я художник-мультипликатор по образованию.</p>
+				<p>Имею навыки создания иллюстрации, раскадровки, скетчей, концепт арта, pixel арт, анимации 2D.</p>
+				<p>Сейчас изучаю UX/UI дизайн и Java, с фокусом на создании удобных и привлекательных пользовательских интерфейсов.</p>
+				<p>Обладаю большой фантазией и желанием развиваться и работать в IT сфере.</p>
+				<p>Так же имеются: знания Ofis Программ, использование Гугл инструментов, 1С Бухгалтерия. </p>
+				<p>Умею: планировать, вести деловую переписку, нацеливаться на результат и делать несколько задач.</p>
+				<p>Открыта к коммуникации.</p>
+				<div class="social-links">
+					<a href="https://t.me/tomavoron"><i class="fab fa-telegram"></i></a>
+					<a href="https://www.linkedin.com/in/tamara-voronina-84b859274"><i class="fab fa-linkedin"></i></a>
+					<a href="#" onclick="copyMailToClipboard()"><i class="fa fa-envelope"></i></a>
+					<a href="https://github.com/ternsip"><i class="fab fa-github"></i></a>
+					<a href="https://www.behance.net/tovva"><i class="fa-brands fa-behance"></i></a>
+				</div>
+			</div>
+		</div>
+		<div class="image-container">
+			<img src="Sprite-5EE.png" alt="Image 1">
+			<img src="Sprite-00027.gif" alt="Image 2">
+			<img src="url_to_your_image_2.jpg" alt="Image 3">
+			<img src="url_to_your_image_2.jpg" alt="Image 4">
+			<img src="url_to_your_image_2.jpg" alt="Image 5">
+			<img src="url_to_your_image_2.jpg" alt="Image 6">
+			<img src="url_to_your_image_2.jpg" alt="Image 7">
+			<img src="url_to_your_image_1.jpg" alt="Image 8">
+			<img src="url_to_your_image_2.jpg" alt="Image 9">
+			<img src="url_to_your_image_1.jpg" alt="Image 10">
+			<img src="url_to_your_image_2.jpg" alt="Image 11">
+			<img src="url_to_your_image_2.jpg" alt="Image 12">
+			<!-- добавьте больше изображений по мере необходимости -->
+		</div>
+	</div>
+</body>
+</html>
