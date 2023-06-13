@@ -14,6 +14,7 @@
             height: 100vh;
             overflow-y: scroll;
 			font-family: PixelArtFont, monospace;
+			text-transform: uppercase;
 			background-color: white;
         }
 		
@@ -76,6 +77,7 @@
 		
 		.social-links i:hover {
 			transform: scale(1.1);
+			cursor: pointer;
 		}
 		
 		.image-container {
@@ -93,6 +95,7 @@
             object-fit: cover;
 			box-sizing: border-box;
 			image-rendering: pixelated;
+			transition: transform 0.05s ease;
         }
 		.image-container img:hover {
             border: none;
@@ -102,13 +105,44 @@
 			transform: scale(2);
 			border: none;
 		}
-
+		
+		
+		.tabs {
+			display: flex;
+			justify-content:space-evenly;
+		}
+	
+		p.tab {
+			margin: 5px;
+			cursor: pointer;
+			transition: box-shadow 0.3s ease;
+		}
+		
+		p.tab:hover {
+			box-shadow: 0 0 5px 2px rgba(0, 0, 255, 0.5);
+			background-color: rgba(0, 0, 255, 0.25);
+		}
 		
     </style>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
-	function copyMailToClipboard() {
-		navigator.clipboard.writeText('tama.voron@ya.ru');
-	}
+		function copyMailToClipboard() {
+			navigator.clipboard.writeText('tama.voron@ya.ru');
+		}
+		
+		function selectTab(id) {
+			$("div[class$='image-container']").hide();
+			$("p[class$='tab']").css('border-bottom', 'none');
+			$("#ic-"+id).show();
+			$("p[data-id$='"+id+"']").css('border-bottom', '2px dashed #6495ED');
+		}	
+		
+		$(document).ready(function() {
+			selectTab(1);
+			$("p[class$='tab']").click(function() {
+				selectTab($(this).data('id'));
+			});
+		});
     </script>
 </head>
 <body>
@@ -134,19 +168,39 @@
 				</div>
 			</div>
 		</div>
-		<div class="image-container">
-			<img src="Sprite-5EE.png" alt="Image 1">
-			<img src="Sprite-5EE.png" alt="Image 1">
-			<img src="Sprite-5EE.png" alt="Image 1">
-			<img src="Sprite-5EE.png" alt="Image 1">
-			<img src="Sprite-5EE.png" alt="Image 1">
-			<img src="Sprite-5EE.png" alt="Image 1">
-			<img src="Sprite-00027.gif" alt="Image 2">
-			<img src="Sprite-00027.gif" alt="Image 2">
-			<img src="Sprite-00027.gif" alt="Image 2">
-			<img src="Sprite-00027.gif" alt="Image 2">
-			<img src="Sprite-00027.gif" alt="Image 2">
-			<!-- добавьте больше изображений по мере необходимости -->
+		<div class="tabs">    
+			<p class="tab" data-id="1">ALL</label>
+			<p class="tab" data-id="2">PIXEL-ART</label>
+			<p class="tab" data-id="3">ILLUSTRATION</label>
+			<p class="tab" data-id="4">UX/UI</label>
+		</div>
+		<div class="image-container" id="ic-1">
+			<img src="Sprite-5EE.png">
+			<img src="Sprite-5EE.png">
+			<img src="Sprite-5EE.png">
+			<img src="Sprite-5EE.png">
+			<img src="Sprite-5EE.png">
+			<img src="Sprite-5EE.png">
+			<img src="Sprite-00027.gif">
+			<img src="Sprite-00027.gif">
+			<img src="Sprite-00027.gif">
+			<img src="Sprite-00027.gif">
+			<img src="Sprite-00027.gif">
+		</div>
+		<div class="image-container" id="ic-2">
+			<img src="Sprite-5EE.png">
+			<img src="Sprite-00027.gif">
+		</div>
+		<div class="image-container" id="ic-3">
+			<img src="Sprite-5EE.png">
+		</div>
+		<div class="image-container" id="ic-4">
+			<img src="Sprite-5EE.png">
+			<img src="Sprite-5EE.png">
+			<img src="Sprite-5EE.png">
+			<img src="Sprite-5EE.png">
+			<img src="Sprite-5EE.png">
+			<img src="Sprite-5EE.png">
 		</div>
 	</div>
 </body>
