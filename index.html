@@ -67,18 +67,26 @@
 			width: 250px;
 			display: flex;
 			flex-direction: row;
+			justify-content: space-between;
         }
 		.social-links i {
-			padding-right: 5vh;
-			display: inline-block;
 			text-decoration: none;
-			font-size:22px;
+			font-size:25px;
 			color: #9999ff;
 		}
 		
-		.social-links i:hover {
-			transform: scale(1.1);
+		.social-btn {
+			background-color: transparent;
+			border: none;
+			color: white;
+			font-size: 25px;
 			cursor: pointer;
+			border-radius: 35%;
+		}
+		
+		.social-btn:hover {
+			background-color: rgba(65, 105, 225, 0.15);
+			transform: scale(1.01);
 		}
 		
 		.image-container {
@@ -171,11 +179,11 @@
 				<p>ILLUSTRATIONS • PORTRAITS • CONCEPT-ARTS</p>
 				<p>ANIMATED PIXEL ARTS • STORYBOARDS • SKETCHES</p>
 				<div class="social-links">
-					<a href="https://t.me/tomavoron"><i class="fab fa-telegram"></i></a>
-					<a href="https://www.linkedin.com/in/tamara-voronina-84b859274"><i class="fab fa-linkedin"></i></a>
-					<a href="#" onclick="copyMailToClipboard()"><i class="fa fa-envelope"></i></a>
-					<a href="https://github.com/tovva"><i class="fab fa-github"></i></a>
-					<a href="https://www.behance.net/tovva"><i class="fa-brands fa-behance"></i></a>
+					<button onclick="window.location.href = 'https://t.me/tomavoron'" class="social-btn"><i class="fab fa-telegram"></i></button>
+					<button onclick="window.location.href = 'https://www.linkedin.com/in/tamara-voronina-84b859274'"class="social-btn"><i class="fab fa-linkedin"></i></button>
+					<button onclick="copyMailToClipboard()"class="social-btn"><i class="fa fa-envelope"></i></button>
+					<button onclick="window.location.href = 'https://github.com/tovva'"class="social-btn"><i class="fab fa-github"></i></button>
+					<button onclick="window.location.href = 'https://www.behance.net/tovva'"class="social-btn"><i class="fa-brands fa-behance"></i></button>
 				</div>
 			</div>
 		</div>
