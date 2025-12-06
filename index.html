@@ -42,7 +42,7 @@
             border-radius: 50%;
 			border: 4px solid #99ccff;
 
-			background-image: url('me-2.png'); 
+			background-image: url('images/me-2.png'); 
 			background-size: cover;
 			background-repeat: no-repeat;
 			background-position: top center;
@@ -158,7 +158,7 @@
 			var container = $("#ic-"+id);
 			container.show();
 			
-			// Lazy load: загружаем картинки только при открытии вкладки
+			// Lazy load превью
 			container.find('img[data-src]').each(function() {
 				$(this).attr('src', $(this).attr('data-src'));
 				$(this).removeAttr('data-src');
@@ -173,18 +173,19 @@
 				var image = $(this);
 				image.on('mouseup', function(e) {
 					if (e.which === 3 || e.which === 2) {
-						// Exclude right mouse button and scroll
 						return;
 					}
-					var src = image.attr("src") || image.attr("data-src");
-					window.open(src, "_blank");
+					// Открываем оригинал из папки images
+					var previewSrc = image.attr("src") || image.attr("data-src");
+					var originalSrc = previewSrc.replace('preview/', 'images/');
+					window.open(originalSrc, "_blank");
 				});
 			});
 		}
 		
 		$(document).ready(function() {
 			
-			// Подготовка lazy loading: перемещаем src в data-src для всех картинок
+			// Подготовка lazy loading
 			$('.image-container img').each(function() {
 				var src = $(this).attr('src');
 				if (src) {
@@ -234,74 +235,74 @@
 			<p class="tab" data-id="7">RETRO</label>
 		</div>
 		<div class="image-container" id="ic-2">
-			<img src="potion.png">
-			<img src="chu.png">
-			<img src="dragon.png">
-			<img src="turtle.gif">
-			<img src="TomAndJerry.jpg">
-			<img src="Ava.png">
-			<img src="Path.png">
-			<img src="Map.png">
-			<img src="eye-fire.jpg">
-			<img src="keto.jpg">
-			<img src="beast.png">
+			<img src="preview/potion.png">
+			<img src="preview/chu.png">
+			<img src="preview/dragon.png">
+			<img src="preview/turtle.gif">
+			<img src="preview/TomAndJerry.jpg">
+			<img src="preview/Ava.png">
+			<img src="preview/Path.png">
+			<img src="preview/Map.png">
+			<img src="preview/eye-fire.jpg">
+			<img src="preview/keto.jpg">
+			<img src="preview/beast.png">
 		</div>
 		<div class="image-container" id="ic-3">
-			<img src="sphere-pixel.png" style="image-rendering: pixelated;">
-			<img src="floating-island.png" style="image-rendering: pixelated;">
-			<img src="poke-big.png" style="image-rendering: pixelated;">
-			<img src="rat-left.gif" style="image-rendering: pixelated;">
-			<img src="Sprite-00036grib.png" style="image-rendering: pixelated;">
-			<img src="lighthouse-4px.png" style="image-rendering: pixelated;">
+			<img src="preview/sphere-pixel.png" style="image-rendering: pixelated;">
+			<img src="preview/floating-island.png" style="image-rendering: pixelated;">
+			<img src="preview/poke-big.png" style="image-rendering: pixelated;">
+			<img src="preview/rat-left.gif" style="image-rendering: pixelated;">
+			<img src="preview/Sprite-00036grib.png" style="image-rendering: pixelated;">
+			<img src="preview/lighthouse-4px.png" style="image-rendering: pixelated;">
 		</div>
 		<div class="image-container" id="ic-4">
-			<img src="maki.png">
-			<img src="anime-guy.png">
-			<img src="balalaika.png">
-			<img src="me-1.png">
-			<img src="me-2.png">
-			<img src="velos.png">
-			<img src="nebo.png">
-			<img src="dedushka.png">
-			<img src="icy.png">
-			<img src="cup.png">
+			<img src="preview/maki.png">
+			<img src="preview/anime-guy.png">
+			<img src="preview/balalaika.png">
+			<img src="preview/me-1.png">
+			<img src="preview/me-2.png">
+			<img src="preview/velos.png">
+			<img src="preview/nebo.png">
+			<img src="preview/dedushka.png">
+			<img src="preview/icy.png">
+			<img src="preview/cup.png">
 		</div>
 		<div class="image-container" id="ic-5">
-			<img src="car.png">
-			<img src="guy.png">
-			<img src="hair.png">
+			<img src="preview/car.png">
+			<img src="preview/guy.png">
+			<img src="preview/hair.png">
 		</div>
 		<div class="image-container" id="ic-6">
-			<img src="cat.png">
-			<img src="street.png">
-			<img src="bench.png">
-			<img src="shroom.png">
-			<img src="shroom-2.png">
-			<img src="murshmallow.png">
-			<img src="zabroshka.png">
-			<img src="lion.png">
-			<img src="deer.png">
-			<img src="deer-2.png">
-			<img src="small-deer.png">
-			<img src="small-deer-2.png">
+			<img src="preview/cat.png">
+			<img src="preview/street.png">
+			<img src="preview/bench.png">
+			<img src="preview/shroom.png">
+			<img src="preview/shroom-2.png">
+			<img src="preview/murshmallow.png">
+			<img src="preview/zabroshka.png">
+			<img src="preview/lion.png">
+			<img src="preview/deer.png">
+			<img src="preview/deer-2.png">
+			<img src="preview/small-deer.png">
+			<img src="preview/small-deer-2.png">
 		</div>
 		<div class="image-container" id="ic-7">
-			<img src="palm.png">
-			<img src="palm2.png">
-			<img src="palm3.png">
-			<img src="palm4.png">
-			<img src="palm-sticker.png">
-			<img src="kremlin.png">
+			<img src="preview/palm.png">
+			<img src="preview/palm2.png">
+			<img src="preview/palm3.png">
+			<img src="preview/palm4.png">
+			<img src="preview/palm-sticker.png">
+			<img src="preview/kremlin.png">
 		</div>
 		<div class="image-container" id="ic-8">
-			<img src="gum.png">
-			<img src="izbushka.png">
-			<img src="lamp1.png">
-			<img src="lamp2.png">
-			<img src="fairy-1.png">
-			<img src="fairy-2.png">
-			<img src="bolshoi-dance.png">
-			<img src="castle.png">
+			<img src="preview/gum.png">
+			<img src="preview/izbushka.png">
+			<img src="preview/lamp1.png">
+			<img src="preview/lamp2.png">
+			<img src="preview/fairy-1.png">
+			<img src="preview/fairy-2.png">
+			<img src="preview/bolshoi-dance.png">
+			<img src="preview/castle.png">
 		</div>
 	</div>
 </body>
