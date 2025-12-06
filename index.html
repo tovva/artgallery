@@ -154,7 +154,16 @@
 		function selectTab(id) {
 			$("div[class$='image-container']").hide();
 			$("p[class$='tab']").css('border-bottom', 'none');
-			$("#ic-"+id).show();
+			
+			var container = $("#ic-"+id);
+			container.show();
+			
+			// Lazy load: загружаем картинки только при открытии вкладки
+			container.find('img[data-src]').each(function() {
+				$(this).attr('src', $(this).attr('data-src'));
+				$(this).removeAttr('data-src');
+			});
+			
 			$("p[data-id$='"+id+"']").css('border-bottom', '2px dashed #6495ED');
 		}
 		
@@ -167,13 +176,23 @@
 						// Exclude right mouse button and scroll
 						return;
 					}
-					window.open(image.attr("src"), "_blank");
+					var src = image.attr("src") || image.attr("data-src");
+					window.open(src, "_blank");
 				});
 			});
 		}
 		
 		$(document).ready(function() {
-		
+			
+			// Подготовка lazy loading: перемещаем src в data-src для всех картинок
+			$('.image-container img').each(function() {
+				var src = $(this).attr('src');
+				if (src) {
+					$(this).attr('data-src', src);
+					$(this).removeAttr('src');
+				}
+			});
+			
 			selectTab(8);
 			$("p[class$='tab']").click(function() {
 				selectTab($(this).data('id'));
